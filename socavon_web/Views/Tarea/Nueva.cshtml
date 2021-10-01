@@ -1,0 +1,36 @@
+﻿@model socavon_web.ViewModels.TareaViewModel
+
+
+<div class="container">
+    <div class="row">
+        <h2>Ingresar una nueva tarea.</h2>
+    </div>
+
+    <form asp-action="Nueva" asp-controller="Tarea" method="post">
+        <div class="form-group">
+            <label asp-for="Title">Titulo</label>
+            <input asp-for="Title" class="form-control" type="text" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Descripción</label>
+            <input asp-for="Description" class="form-control" type="text" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Prioridad</label>
+            <select class="form-select" asp-for="Priority">
+                <option selected value="baja">Baja</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Crear Nueva Tarea</button>
+        </div>
+    </form>
+</div>
+
+@section scripts{ 
+ @{ <partial name="_ValidationScriptsPartial" /> }
+}

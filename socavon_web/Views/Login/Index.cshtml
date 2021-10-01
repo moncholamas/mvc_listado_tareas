@@ -1,0 +1,26 @@
+﻿@model socavon_web.ViewModels.LoginViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h2>Completa el formulario</h2>
+            <form asp-controller="Login" asp-action="Login" method="post">
+                <div class="form-group">
+                    <label asp-for="Correo"></label>
+                    <input id="correo" name="correo" type="text" placeholder="correo@ejemplo.com" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Clave"></label>
+                    <input id="clave" name="clave" type="password" placeholder="0000000000" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input value="Ingresar" type="submit" class="btn btn-block btn-dark" />
+                </div>
+            </form>
+            <p>¿Todavía no tenes cuenta? <a asp-action="Logup" asp-controller="Login">Registrate</a></p>
+        </div>
+    </div>
+</div>
+
+
